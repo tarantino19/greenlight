@@ -1,0 +1,43 @@
+# Binaries for the project
+greenlight
+
+# Binaries built by go install or go build
+*.exe
+*.bin
+
+# Go build cache
+.cache
+
+# Dependencies
+vendor/
+
+# Generated files
+# Depending on your migrations library, you might need to adjust this
+migrations/*.sql # If migration files are generated
+
+# Operating system noise
+.DS_Store
+
+# IDE specific files (adjust if you use a different IDE)
+.idea/
+.vscode/
+
+# Log files
+*.log
+
+# Configuration files that might contain sensitive info
+# Adjust this based on your actual configuration file names
+*.env
+config/*.yaml # Example if you use YAML config
+
+# Other common ignored files
+*~
+
+# Build output directory (assuming a standard build process might put output here)
+build/
+
+# Directory for compiled binaries (often created by go build)
+bin/
+
+# Temporary files
+*.tmp
