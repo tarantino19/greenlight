@@ -13,7 +13,7 @@ vendor/
 
 # Generated files
 # Depending on your migrations library, you might need to adjust this
-migrations/*.sql # If migration files are generated
+#migrations/*.sql # If migration files are generated
 
 # Operating system noise
 .DS_Store
