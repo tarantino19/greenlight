@@ -14,6 +14,7 @@ import (
 	// package. Note that we alias this import to the blank identifier, to stop the Go
 	// compiler complaining that the package isn't being used.
 	_ "github.com/lib/pq"
+	"github.com/tarantino19/greenlight/internal/data"
 )
 
 const version = "1.0.0"
@@ -31,9 +32,11 @@ type config struct {
 	}
 }
 
+// Add a models field to hold our new Models struct.
 type application struct {
 	config config
 	logger *slog.Logger
+	models data.Models
 }
 
 func main() {
@@ -71,9 +74,12 @@ func main() {
 	// established.
 	logger.Info("***GREENLIGHT - database connection pool established - GREENLIGHT***")
 
+	// Use the data.NewModels() function to initialize a Models struct, passing in the
+	// connection pool as a parameter.
 	app := &application{
 		config: cfg,
 		logger: logger,
+		models: data.NewModels(db),
 	}
 
 	srv := &http.Server{
